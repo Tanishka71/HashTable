@@ -9,22 +9,23 @@ public class MyHashMapMain {
 	 */
     public static void main(String[] args) {
         // Sample sentence
-        String sentence = "To be or not to be";
+    	String paragraph = "Paranoids are not paranoid because they are paranoid but " +
+                "because they keep putting themselves deliberately into paranoid avoidable situations";
 
-        // Split the sentence into individual words
-        String[] words = sentence.split(" ");
+        String[] words = paragraph.split("\\s+"); // Split by whitespace to get individual words
 
-        // Create a hash map to store word frequencies with an appropriate capacity (e.g., 10)
-        MyHashMap<String, Integer> wordFrequencyMap = new MyHashMap<>(10);
+        MyHashMap wordFrequencyMap = new MyHashMap(10); // Choose an appropriate capacity
 
-        // Iterate through each word in the sentence and insert it into the hash map
         for (String word : words) {
+            // Convert each word to lowercase to treat them case-insensitively
+            word = word.toLowerCase();
             wordFrequencyMap.insert(word);
         }
 
         // Print the frequency of each word
         for (String word : words) {
-            System.out.println("Frequency of '" + word + "': " + wordFrequencyMap.getFrequency(word));
+        	word=word.toLowerCase()
+;            System.out.println("Frequency of '" + word + "': " + wordFrequencyMap.getFrequency(word));
         }
     }
 }
