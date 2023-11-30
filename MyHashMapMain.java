@@ -27,5 +27,12 @@ public class MyHashMapMain {
         	word=word.toLowerCase()
 ;            System.out.println("Frequency of '" + word + "': " + wordFrequencyMap.getFrequency(word));
         }
+        System.out.println("Frequency of 'avoidable' before removal: " + wordFrequencyMap.getFrequency("avoidable"));
+
+        // Remove the word 'avoidable'
+        wordFrequencyMap.remove("avoidable");
+
+        // Print the frequency of each word after removal
+        System.out.println("Frequency of 'avoidable' after removal: " + wordFrequencyMap.getFrequency("avoidable"));
     }
 }
