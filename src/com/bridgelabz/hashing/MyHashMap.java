@@ -70,4 +70,17 @@ class MyHashMap<K, V> {
 
         return null; // Return null if key is not found
     }
+    
+
+	/*
+	 * @desc: removes a word from hash map
+	 * @params: key - the key for which the frequency is retrieved
+	 * @return: none
+	 */
+    public void remove(	K key) {
+        int bucketIndex = getBucketIndex(key);
+
+        // Find and remove the key from the bucket
+        buckets[bucketIndex].removeIf(node -> node.key.equals(key));
+    }
 }
